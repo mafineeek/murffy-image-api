@@ -1,8 +1,9 @@
 const express = require("express");
 const { Font, RankCardBuilder, LeaderboardBuilder } = require("canvacord");
+const path = require('path');
 const app = express();
 
-Font.fromFileSync("./ggsans-bold.ttf");
+Font.fromFileSync( path.join(process.cwd(), 'ggsans-bold.ttf'));
 
 app.use(express.json());
 

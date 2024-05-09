@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "canvacord": "^6.0.2",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "path": "^0.12.7"
   }
 }
