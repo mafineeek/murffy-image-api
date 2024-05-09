@@ -6,11 +6,7 @@ Font.fromFileSync("./ggsans-bold.ttf");
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.json({
-        message: "Image API is UP!",
-    });
-})
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.get("/rankcard", async (req, res) => {
   const { name, avatar, currentXp, requiredXp, level, rank, barColor, bgColor } =
@@ -52,4 +48,4 @@ app.post('/leaderboard', async (req, res) => {
     res.send(await leaderboard.build());
 })
 
-app.listen(5252, () => console.log("Image API is ready!"));
+app.listen(3000, () => console.log("Image API is ready!"));
