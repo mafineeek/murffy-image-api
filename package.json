@@ -13,8 +13,5 @@
   "dependencies": {
     "canvacord": "^6.0.2",
     "express": "^4.19.2"
-  },
-  "engines": {
-    "node": "16.x"
   }
 }
