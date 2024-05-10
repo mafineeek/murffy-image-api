@@ -40,6 +40,8 @@ app.get("/rankcard", async (req, res) => {
 app.post('/leaderboard', async (req, res) => {
     const {header, players} = req.body;
 
+  console.log(req.body)
+
     const leaderboard = new LeaderboardBuilder()
     .setHeader(header)
     .setPlayers(players)
