@@ -1,9 +1,9 @@
 const express = require("express");
 const { Font, RankCardBuilder, LeaderboardBuilder } = require("canvacord");
-const path = require('path');
+const random = require('@sefinek/random-animals');
 const app = express();
 
-Font.fromFileSync( path.join(process.cwd(), 'ggsans-bold.ttf'));
+Font.fromFileSync("./ggsans-bold.ttf");
 
 app.use(express.json());
 
@@ -40,8 +40,6 @@ app.get("/rankcard", async (req, res) => {
 app.post('/leaderboard', async (req, res) => {
     const {header, players} = req.body;
 
-  console.log(req.body)
-
     const leaderboard = new LeaderboardBuilder()
     .setHeader(header)
     .setPlayers(players)
@@ -49,6 +47,18 @@ app.post('/leaderboard', async (req, res) => {
 
     res.setHeader("Content-Type", "image/png");
     res.send(await leaderboard.build());
+})
+
+app.get('/cat', async (req, res) => {
+  const data = await random.cat();
+
+  res.send(data.message);
+})
+
+app.get('/dog', async (req, res) => {
+  const data = await random.dog();
+
+  res.send(data.message);
 })
 
 app.listen(3000, () => console.log("Image API is ready!"));

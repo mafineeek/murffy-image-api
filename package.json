@@ -11,8 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sefinek/random-animals": "^2.0.3",
     "canvacord": "^6.0.2",
     "express": "^4.19.2",
     "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
