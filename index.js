@@ -3,8 +3,6 @@ const { Font, RankCardBuilder, LeaderboardBuilder } = require("canvacord");
 const random = require('@sefinek/random-animals');
 const app = express();
 
-Font.fromFileSync("./ggsans-bold.ttf");
-
 app.use(express.json());
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
